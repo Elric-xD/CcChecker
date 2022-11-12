@@ -1,5 +1,11 @@
+import re
+
+from core import http
+from telethon import events
+from Elric import Elric
+
 @Elric.on(events.NewMessage(pattern=r'\.bin'))
-async def srbin(event):
+async def bin(event):
     BIN = event.message.message[len('.bin '):]
     reply_msg = await event.get_reply_message()
     if reply_msg:
